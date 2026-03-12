@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔦 CodeSpotlight
+# CodeSpotlight
 
 ### Understand any codebase in seconds
 
@@ -11,22 +11,22 @@
 
 **CodeSpotlight** is an autonomous multi-agent AI system that analyzes any public GitHub repository and instantly generates architecture documentation, dependency maps, and an interactive chat assistant — so developers can understand any codebase in seconds instead of days.
 
-[🚀 Try it Live](https://codespotlightv1-production.up.railway.app) · [📖 How it works](#how-it-works) · [🛠️ Run locally](#run-locally)
+[ Try it Live](https://codespotlightv1-production.up.railway.app) · [📖 How it works](#how-it-works) · [🛠️ Run locally](#run-locally)
 
 </div>
 
 ---
 
-## ✨ Features
+## Features
 
 | Feature | Description |
 |---|---|
-| 📄 **Auto Documentation** | Generates architecture overview, module breakdown, and developer notes |
-| 💬 **Repo Chat** | Ask anything about the codebase — powered by LLaMA 3.3 70B |
-| 🧠 **Smart Chunking** | Handles massive repos (100+ files) by processing in intelligent batches |
-| 🕐 **Session History** | All past sessions saved locally — resume any conversation instantly |
-| ↓ **Export to Markdown** | Download generated docs as a `.md` file |
-| ⚡ **Fast & Free** | Powered by Groq's free API — no OpenAI costs |
+|  **Auto Documentation** | Generates architecture overview, module breakdown, and developer notes |
+|  **Repo Chat** | Ask anything about the codebase — powered by LLaMA 3.3 70B |
+|  **Smart Chunking** | Handles massive repos (100+ files) by processing in intelligent batches |
+|  **Session History** | All past sessions saved locally — resume any conversation instantly |
+|  **Export to Markdown** | Download generated docs as a `.md` file |
+|  **Fast & Free** | Powered by Groq's free API — no OpenAI costs |
 
 ---
 
@@ -42,7 +42,7 @@ https://github.com/django/django        → analyzed in ~3 minutes (500+ files)
 
 ---
 
-## 🏗️ How It Works
+## How It Works
 
 CodeSpotlight uses a **multi-agent pipeline** where each AI agent has a specialized role:
 
@@ -108,7 +108,7 @@ GitHub URL
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Backend**
 - [FastAPI](https://fastapi.tiangolo.com) — REST API framework
@@ -127,7 +127,7 @@ GitHub URL
 
 ---
 
-## 🚀 Run Locally
+## Run Locally
 
 ### Prerequisites
 - Python 3.11+
@@ -164,7 +164,7 @@ Get your free key at [console.groq.com](https://console.groq.com)
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 CodeSpotlightv1/
@@ -193,7 +193,7 @@ CodeSpotlightv1/
 
 ---
 
-## 🗺️ Roadmap
+## Roadmap
 
 - [x] Multi-agent pipeline
 - [x] Smart chunking for large repos
@@ -209,16 +209,16 @@ CodeSpotlightv1/
 
 ---
 
-## 👩‍💻 Author
+## Author
 
 **Regine Precious De Joya**
-Aspiring AI Engineer | Former DXC Technology
+Aspiring AI Engineer | Former Analyst II ERP Package Applications @ DXC Technology
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat&logo=linkedin)](https://linkedin.com/in/engr-rpdj)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/reginepreciousdejoya/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/engr-rpdj)
 
 ---
 
 <div align="center">
-Built with 🔦 by Regine · Powered by Groq + LLaMA 3.3
+Built with by Regine · Powered by Groq + LLaMA 3.3
 </div>
