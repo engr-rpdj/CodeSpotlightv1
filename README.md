@@ -2,16 +2,16 @@
 
 # CodeSpotlight
 
-### Understand any codebase in seconds
+### Understand any codebase, in seconds.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Railway-7c6af7?style=for-the-badge&logo=railway)](https://codespotlightv1-production.up.railway.app)
-[![GitHub](https://img.shields.io/badge/GitHub-engr--rpdj-black?style=for-the-badge&logo=github)](https://github.com/engr-rpdj/CodeSpotlightv1)
+[![GitHub](https://img.shields.io/badge/GitHub-engr--rpdj-black?style=for-the-badge&logo=github)](https://github.com/engr-rpdj)
 [![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com)
 
 **CodeSpotlight** is an autonomous multi-agent AI system that analyzes any public GitHub repository and instantly generates architecture documentation, dependency maps, and an interactive chat assistant — so developers can understand any codebase in seconds instead of days.
 
-[ Try it Live](https://codespotlightv1-production.up.railway.app) · [📖 How it works](#how-it-works) · [🛠️ Run locally](#run-locally)
+[Try it Live](https://codespotlightv1-production.up.railway.app) · [How it works](#how-it-works) · [Run locally](https://github.com/engr-rpdj/CodeSpotlightv1)
 
 </div>
 
@@ -30,7 +30,7 @@
 
 ---
 
-## 🎬 Demo
+## Demo
 
 > Paste any public GitHub URL → get instant documentation + chat
 
@@ -195,24 +195,26 @@ CodeSpotlightv1/
 
 ## Roadmap
 
-- [x] Multi-agent pipeline
-- [x] Smart chunking for large repos
-- [x] Repo chat (multi-turn)
-- [x] Session history
-- [x] Export to Markdown
-- [x] Deploy to Railway
-<!-- - [ ] Clerk authentication (multi-user)
-- [ ] AWS S3 + DynamoDB (persistent storage)
-- [ ] Amazon Bedrock integration (Claude 4 / AWS Nova)
-- [ ] Terraform + GitHub Actions (full CI/CD)
-- [ ] Bedrock AgentCore (enterprise multi-agent) -->
-
+**Completed**
+- Multi-agent pipeline
+- Smart chunking for large repos
+- Repo chat (multi-turn)
+- Session history
+- Export to Markdown
+- Deploy to Railway
+ 
+**Coming Soon**
+- Clerk authentication (multi-user)
+- AWS S3 + DynamoDB (persistent storage)
+- Amazon Bedrock integration (Claude 4 / AWS Nova)
+- Terraform + GitHub Actions (full CI/CD)
+- Bedrock AgentCore (enterprise multi-agent)
 ---
 
 ## Author
 
 **Regine Precious De Joya**
-Aspiring AI Engineer | Former Analyst II ERP Package Applications @ DXC Technology
+| Aspiring AI Engineer | Former (Analyst II ERP Package Applications) @ DXC Technology
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/reginepreciousdejoya/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/engr-rpdj)
@@ -220,5 +222,5 @@ Aspiring AI Engineer | Former Analyst II ERP Package Applications @ DXC Technolo
 ---
 
 <div align="center">
-Built with by Regine · Powered by Groq + LLaMA 3.3
+Built by Engr. Regine Precious de Joya · Powered by Groq + LLaMA 3.3
 </div>
