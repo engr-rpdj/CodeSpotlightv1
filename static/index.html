@@ -257,7 +257,11 @@
         overflow: hidden;
         height: 100%;
       }
-      .mv.on { display: flex; }
+      .mv.on {
+        display: flex;
+        height: 100%;
+        min-height: 0;
+      }
 
       /* ── SCAN VIEW ── */
       #mvScan {
@@ -319,6 +323,7 @@
         gap: 10px;
         scrollbar-width: thin;
         scrollbar-color: var(--border) transparent;
+        min-height: 0;
       }
       #mvChat .mob-input-row {
         flex-shrink: 0;
@@ -327,6 +332,10 @@
         padding: 10px 12px;
         border-top: 1px solid var(--border);
         background: var(--surface);
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
       }
       #mvChat textarea {
         flex: 1;
