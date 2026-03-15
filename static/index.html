@@ -152,10 +152,221 @@
     .btn-delete-session:hover { color: var(--accent2); background: rgba(247,106,140,0.1); }
     .history-overlay { display: none; position: fixed; inset: 0; z-index: 99; }
     .history-overlay.open { display: block; }
+
+    /* ============================================================
+      MOBILE RESPONSIVE PATCH
+      ============================================================ */
+
+    /* ── MOBILE TAB SWITCHER (Chat / Docs toggle) ── */
+    #mobileTabs {
+      display: none;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .mobile-tab {
+      flex: 1;
+      padding: 12px;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .mobile-tab.active {
+      color: var(--text);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── MOBILE BOTTOM NAV ── */
+    #mobileBottomNav {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: 52px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      z-index: 50;
+      align-items: stretch;
+    }
+    .mob-bot-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 8px;
+      cursor: pointer;
+      transition: color 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .mob-bot-btn .mob-icon { font-size: 16px; line-height: 1; }
+    .mob-bot-btn.active,
+    .mob-bot-btn:hover { color: var(--accent); }
+
+    /* ── MOBILE ANALYZE DRAWER ── */
+    #mobileAnalyzeDrawer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-radius: 16px 16px 0 0;
+      z-index: 200;
+      padding: 0 20px 20px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.4);
+    }
+    #mobileAnalyzeDrawer::before {
+      content: '';
+      display: block;
+      width: 40px; height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      margin: 12px auto 16px;
+    }
+    #mobileAnalyzeDrawer.open { transform: translateY(0); }
+    #mobileDrawerOverlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 199;
+    }
+    #mobileDrawerOverlay.open { display: block; }
+
+    @media (max-width: 768px) {
+
+      /* Show mobile elements */
+      #mobileTabs         { display: flex; }
+      #mobileBottomNav    { display: flex; }
+
+      /* Hide desktop elements */
+      .left-panel         { display: none !important; }
+      .tabs               { display: none !important; }
+      header .header-badge { display: none; }
+      #historyToggle      { font-size: 0.65rem; padding: 4px 10px; }
+
+      /* App grid: single column, full height */
+      .app {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 52px auto 1fr !important;
+        height: 100vh;
+      }
+
+      /* Header */
+      header {
+        padding: 0 16px;
+        grid-column: 1;
+      }
+
+      /* Mobile tabs row */
+      #mobileTabs {
+        grid-column: 1;
+      }
+
+      /* Right panel fills remaining space */
+      .right-panel {
+        grid-column: 1;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      /* Push content above bottom nav */
+      .tab-content       { padding-bottom: 52px; }
+      .chat-section-mob  { padding-bottom: 52px; }
+
+      /* Docs body padding */
+      .docs-body { padding: 20px 16px; font-size: 0.8rem; }
+
+      /* Download bar */
+      .download-bar { padding: 8px 16px; }
+
+      /* ── MOBILE CHAT PANEL ── */
+      #mobileChatPanel {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+      }
+      #mobileChatPanel .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 14px 14px 0;
+      }
+      #mobileChatPanel .chat-input-area {
+        padding: 10px 14px;
+        padding-bottom: calc(10px + 52px);
+        border-top: 1px solid var(--border);
+        background: var(--surface);
+        position: sticky;
+        bottom: 0;
+      }
+
+      /* History sidebar — full screen on mobile */
+      .history-sidebar {
+        width: 100% !important;
+        top: 52px !important;
+      }
+
+      /* Status bar */
+      .status-bar { font-size: 0.68rem; }
+
+      /* Msg bubbles */
+      .msg-bubble { font-size: 0.76rem; padding: 8px 12px; }
+      .msg { max-width: 92%; }
+
+      /* Analyze drawer inputs */
+      #mobileAnalyzeDrawer .url-input  { font-size: 0.78rem; }
+      #mobileAnalyzeDrawer .btn-analyze { font-size: 0.82rem; }
+      #mobileAnalyzeDrawer .status-bar  { font-size: 0.68rem; }
+    }
+
+    @media (max-width: 480px) {
+      .docs-body { padding: 16px 12px; font-size: 0.78rem; }
+      .docs-body h1 { font-size: 1.3rem; }
+      .docs-body h2 { font-size: 0.95rem; }
+      .msg-bubble { font-size: 0.74rem; }
+      .logo { font-size: 1rem; }
+    }
+
   </style>
 </head>
 <body>
 <div class="app">
+
+  <!-- Mobile drawer overlay -->
+  <div id="mobileDrawerOverlay" onclick="closeMobileDrawer()"></div>
+
+  <!-- Mobile Analyze Drawer (slides up from bottom) -->
+  <div id="mobileAnalyzeDrawer">
+    <div class="panel-label">Repository URL</div>
+    <input class="url-input" id="repoUrlMob" type="text"
+      placeholder="https://github.com/user/repo"
+      onkeydown="if(event.key==='Enter') startAnalysisMob()" />
+    <button class="btn-analyze" id="analyzeBtnMob" onclick="startAnalysisMob()">
+      <span id="btnTextMob">Analyze Repo</span>
+      <div class="spinner" id="spinnerMob"></div>
+    </button>
+    <div class="status-bar" id="statusBarMob"></div>
+  </div>
+
+  <!-- Mobile tab switcher (Chat / Docs) -->
+  <div id="mobileTabs">
+    <button class="mobile-tab active" id="mobTabChat" onclick="switchMobileTab('chat')">💬 Chat</button>
+    <button class="mobile-tab"        id="mobTabDocs" onclick="switchMobileTab('docs')">📄 Docs</button>
+  </div>
 
   <!-- Header -->
   <header>
@@ -217,7 +428,21 @@
   </div>
 
 </div>
-
+<!-- Mobile bottom nav -->
+<nav id="mobileBottomNav">
+  <button class="mob-bot-btn active" id="mobNavChat" onclick="switchMobileTab('chat')">
+    <span class="mob-icon">💬</span>chat
+  </button>
+  <button class="mob-bot-btn" id="mobNavAnalyze" onclick="toggleMobileDrawer()">
+    <span class="mob-icon">⬡</span>analyze
+  </button>
+  <button class="mob-bot-btn" id="mobNavDocs" onclick="switchMobileTab('docs')">
+    <span class="mob-icon">📄</span>docs
+  </button>
+  <button class="mob-bot-btn" id="mobNavHistory" onclick="toggleHistory()">
+    <span class="mob-icon">🕐</span>history
+  </button>
+</nav>
 </div>
 
 <!-- History Sidebar -->
@@ -583,6 +808,114 @@
   // ── Init ──
   document.getElementById("repoUrl").addEventListener("keydown", e => { if(e.key==="Enter") startAnalysis(); });
   renderHistoryList(); // render on load in case sidebar is opened
+/* ── MOBILE FUNCTIONS ── */
+
+function toggleMobileDrawer() {
+  const drawer  = document.getElementById('mobileAnalyzeDrawer');
+  const overlay = document.getElementById('mobileDrawerOverlay');
+  const isOpen  = drawer.classList.contains('open');
+  drawer.classList.toggle('open', !isOpen);
+  overlay.classList.toggle('open', !isOpen);
+  if (!isOpen) document.getElementById('repoUrlMob').focus();
+}
+
+function closeMobileDrawer() {
+  document.getElementById('mobileAnalyzeDrawer').classList.remove('open');
+  document.getElementById('mobileDrawerOverlay').classList.remove('open');
+}
+
+function switchMobileTab(tab) {
+  // Update mobile tab buttons
+  document.getElementById('mobTabChat').classList.toggle('active', tab === 'chat');
+  document.getElementById('mobTabDocs').classList.toggle('active', tab === 'docs');
+
+  // Update bottom nav
+  document.getElementById('mobNavChat').classList.toggle('active', tab === 'chat');
+  document.getElementById('mobNavDocs').classList.toggle('active', tab === 'docs');
+
+  // Show/hide right panel tab contents
+  const docsContent = document.getElementById('tab-docs');
+  const rightPanel  = document.querySelector('.right-panel');
+
+  if (tab === 'docs') {
+    rightPanel.style.display = 'flex';
+    docsContent.style.display = 'block';
+    // Hide chat (we show it as a mobile overlay)
+    document.getElementById('mobileChatOverlay') &&
+      (document.getElementById('mobileChatOverlay').style.display = 'none');
+  } else {
+    // Show chat overlay on mobile
+    let overlay = document.getElementById('mobileChatOverlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'mobileChatOverlay';
+      overlay.style.cssText = `
+        position: fixed; inset: 0; top: 104px; bottom: 52px;
+        background: var(--bg); z-index: 10;
+        display: flex; flex-direction: column; overflow: hidden;
+      `;
+      // Move chat messages + input into overlay
+      const chatMsgs  = document.getElementById('chatMessages');
+      const chatInput = document.querySelector('.chat-input-area');
+      const chatLabel = document.querySelector('.chat-section .panel-label');
+      const wrapper   = document.createElement('div');
+      wrapper.style.cssText = 'flex:1; display:flex; flex-direction:column; overflow:hidden;';
+      if (chatLabel) wrapper.appendChild(chatLabel.cloneNode(true));
+      wrapper.appendChild(chatMsgs);
+      wrapper.appendChild(chatInput);
+      overlay.appendChild(wrapper);
+      document.body.appendChild(overlay);
+    } else {
+      overlay.style.display = 'flex';
+    }
+  }
+}
+
+// Mirror the desktop analyze into mobile drawer
+async function startAnalysisMob() {
+  const url = document.getElementById('repoUrlMob').value.trim();
+  if (!url) return;
+  // Sync to desktop input and trigger
+  document.getElementById('repoUrl').value = url;
+  setLoadingMob(true);
+  setStatusMob('Cloning & scanning repo...', 'active');
+  closeMobileDrawer();
+  // Run the main analysis
+  await startAnalysis();
+  setLoadingMob(false);
+  // Sync status from desktop
+  const desktopStatus = document.getElementById('statusBar');
+  setStatusMob(desktopStatus.textContent, desktopStatus.className.replace('status-bar','').trim());
+  // Auto-switch to docs after analysis
+  if (repoAnalyzed) switchMobileTab('docs');
+}
+
+function setLoadingMob(on) {
+  document.getElementById('analyzeBtnMob').disabled    = on;
+  document.getElementById('btnTextMob').style.display  = on ? 'none'  : 'block';
+  document.getElementById('spinnerMob').style.display  = on ? 'block' : 'none';
+}
+
+function setStatusMob(msg, type) {
+  const el = document.getElementById('statusBarMob');
+  el.textContent = msg;
+  el.className   = 'status-bar ' + (type || '');
+}
+
+// Sync repoUrl input between desktop and mobile drawer
+document.getElementById('repoUrlMob').addEventListener('input', function() {
+  document.getElementById('repoUrl').value = this.value;
+});
+document.getElementById('repoUrl').addEventListener('input', function() {
+  document.getElementById('repoUrlMob').value = this.value;
+});
+
+// On mobile, auto-switch to chat tab after sending a message
+const _origSendChat = sendChat;
+window.sendChat = async function() {
+  await _origSendChat();
+  if (window.innerWidth <= 768) switchMobileTab('chat');
+};
 </script>
 </body>
 </html>
