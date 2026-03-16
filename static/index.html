@@ -329,6 +329,7 @@
         flex: 1;
         overflow-y: auto;
         padding: 14px;
+        padding-bottom: 70px;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -343,10 +344,11 @@
         padding: 10px 12px;
         border-top: 1px solid var(--border);
         background: var(--surface);
-        position: sticky;
+        position: fixed;
         bottom: 0;
-        left: 0;
+        left: 52px;
         right: 0;
+        z-index: 50;
       }
       #mvChat textarea {
         flex: 1;
